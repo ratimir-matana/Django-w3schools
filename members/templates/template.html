@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>Testing template</title>
+{% comment %} <link rel="stylesheet" href="{% static 'myfirst.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+<body>
+
+{% comment %} <h1>Hello {{ firstname }}, how are you?</h1>
+
+{% with firstname="Tobias" %}
+    {{ variable_placeholder }}
+{% endwith %}
+
+{% for x in fruits %}
+   <h1>{{ x }}</h1>
+{% endfor %} {% endcomment %}
+
+{% comment %} <p> Club members </p>
+<ul>
+    {% for x in club_members %}
+    <li>{{ x.firstname }}</li>
+    {% endfor %}
+</ul> {% endcomment %}
+
+{% comment %} <p>In views.py you can see what the fruits variable looks like.</p>
+
+<p>This page contains a footer in a template.</p> {% endcomment %}
+
+{# The include tag allows you to include a template inside the current template. This is useful when you have a block of content that is the same for many pages. #}
+{% comment %} {% include 'footer.html' %} {% endcomment %}
+
+{# You can send variables into the template by using the with keyword. In the include file, you refer to the variables by using the {{ variable1 }} syntax #}
+{% include 'mymenu.html' with sponsor="Telemach" %}
+
+<h1>Welcome</h1>
+
+<p>This is my web site.</p>
+
+<p>Check out mymenu.html to see the HTML content of the include.</p>
+
+</body>
+</html>
+
+

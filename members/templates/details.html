@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ club_member.firstname }} {{ club_member.lastname }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mycard">
+  <h1>{{ club_member.firstname }} {{ club_member.lastname }}</h1>
+  
+  <p>Phone {{ club_member.phone }}</p>
+  <p>Member since: {{ club_member.joined_date }}</p>
+  
+  {% comment %} <p>Back to <a href="/members">Members</a></p> {% endcomment %}
+
+</div>  
+  
+{% endblock %}
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>{{ club_member.firstname }} {{ club_member.lastname }}</h1>
+  
+<p>Phone: {{ club_member.phone }}</p>
+<p>Member since: {{ club_member.joined_date }}</p>
+
+<p>Back to <a href="/members">Members</a></p>
+
+</body>
+</html> {% endcomment %}
+
+
+
